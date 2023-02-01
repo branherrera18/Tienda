@@ -10,13 +10,13 @@
  .block {
      background-color: purple;
      border:20px solid blue;
-     padding:20px;
+     padding:20px;  /* espacio entre el contenido y el border */
      width:200px;
      height:200px;
      box-sizing: border-box;      
  }
 
- .static{
+ .static{  /* no es afectado ni por el top ni por el left */
      position:static;
      border:3px solid green;
      top:400px;
@@ -25,12 +25,46 @@
  }
 
  
- .relative{
+ .relative{ /* si es afectado ni por el top ni por el left */
      position:relative;
      border:3px solid green;
      top:400px;
      left:500px;
      width: 300px;
      height: 300px;
+     
+ }
+ 
+ .fixed{ /* si es afectado ni por el top ni por el left */
+     position:fixed;
+     border:3px solid green;
+     top:150px;
+     left:50px;
+     width: 100px;
+     height: 100px;
+     
+ }
+ 
+ .absolute{ /* si es afectado ni por el top ni por el left */
+     position:absolute;
+     border:3px solid green;
+     top:80px;
+     left:50px;
+     width: 100px;
+     height: 100px;
+     
+ }
+ 
+ .cuadrado{ /*  */
+     width: 200px;
+     height: 200px;
+     background: #aaa;
+     margin-bottom: 20px;
+     display:inline-block;
+ }
+ 
+ a{
+     display:block;
+     
      
  }
