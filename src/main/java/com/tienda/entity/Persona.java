@@ -19,7 +19,7 @@ public class Persona {
     private String apellido1;
     private String apellido2;
     private String telefono;
-    private String emial;
+    private String email;
     
     @ManyToOne //foreign key
     @JoinColumn(name = "paises_id") //hace referencia a este
@@ -65,12 +65,12 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    public String getEmial() {
-        return emial;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmial(String emial) {
-        this.emial = emial;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Pais getPais() {
