@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head th:replace="plantilla/template::head">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,9 @@
 
     </head>
     <body>
+        <header th:replace="plantilla/template::header"></header>
         
-        <div class="container"></div>
+        <div class="container">
         <div class="card-header bg-black text-white"></div>
         <div class="card-body">
             
@@ -21,9 +22,9 @@
                   method="POST">
                 
                 <input type="hidden" th:field="*{id}">
-                <div>
+                <div class="form-group mb-3 row" >
                     <label class="col-md-2 col-form-label" for="nombre">Nombre</label>
-                    <div>
+                    <div class="col-sm-10">
                         <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre}">
                     </div>
                 </div>
@@ -66,8 +67,12 @@
                         </select>
                     </div>
                 </div>
+                </div>
                 <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
             </form>
         </div>
+        </div>
+        
+        <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
