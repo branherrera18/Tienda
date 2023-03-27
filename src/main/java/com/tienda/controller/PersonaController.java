@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PersonaController {
@@ -57,5 +58,20 @@ public class PersonaController {
         model.addAttribute("persona",persona);
         model.addAttribute("paises",listaPaises);
         return "crear";
+    }   
+    
+    @RequestMapping(path = {"/search"})
+    public String home(Persona persona, Model model, String keyword){
+        if(keyword!=null){
+            List<Persona> listaPersonas = personaService.getByKeyword(keyword);
+            model.addAttribute("persona",listaPersonas);
+        }else{
+            List<Persona> listaPersonas  = personaService.getAllPersona();
+            model.addAttribute("persona",listaPersonas);
+            return "personas";
+        }
+        return "personas";
+      
     }
+    
 }
