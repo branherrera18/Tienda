@@ -9,4 +9,5 @@ public interface IPersonaService {
     public void savePersona(Persona persona);
     public void delete(long id);
     public List<Persona> getByKeyword(String keyword);
+    public Persona findByNombre(String username);
 }

@@ -36,4 +36,9 @@ public class PersonaService implements IPersonaService{
     public List<Persona> getByKeyword(String keyword) {
         return personaRepository.findByKeyword(keyword);
     }
+
+    @Override
+    public Persona findByNombre(String username) {
+        return personaRepository.findByNombre(username);
+    }
 }

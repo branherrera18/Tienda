@@ -13,4 +13,5 @@ public interface PersonaRepository extends CrudRepository<Persona, Long>{
     @Query(value = "select * from personas p where p.apellido1 like %:keyword%", nativeQuery = true)
     List<Persona> findByKeyword(@Param("keyword") String keyword);
     
+    Persona findByNombre(String nombre);
 }
